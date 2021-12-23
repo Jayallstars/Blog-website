@@ -18,6 +18,24 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
   res.render("home", {homeContent: homeStartingContent});
+});
+
+app.get("/contact", function(req, res) {
+  res.render("contact", {contact: contactContent});
+});
+
+app.get("/about", function(req, res) {
+  res.render("about", {about: aboutContent});
+});
+
+app.get("/compose", function(req, res) {
+  res.render("compose");
+});
+
+app.post("/compose", function(req, res) {
+
+  let newContent = req.body.newBlogContent;
+  console.log(newContent);
 })
 
 
