@@ -7,7 +7,8 @@
 
 <% newTitle.forEach(function(newPost){ %>
   <h1><%= newPost.titleContent %></h1>
-  <p><%= newPost.postContent %></p>
+  <p><%= newPost.postContent.substr(0, 100) + " ... " %>
+  <a href="/posts/<%= newPost.titleContent %>">Read more</a></p>
 <% }); %>
 
-            <%- include("partials/footer") -%>
+<%- include("partials/footer") -%>
